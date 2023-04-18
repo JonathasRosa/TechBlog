@@ -1,12 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//Rotas
 import { AppRoutingModule } from './app-routing.module';
+//Components
 import { AppComponent } from './app.component';
+import { MenuBarComponent } from './components/menu-bar/menu-bar.component';
+import { MenuTitleComponent } from './components/menu-title/menu-title.component';
+import { BigCardComponent } from './components/big-card/big-card.component';
+import { SmallCardComponent } from './components/small-card/small-card.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenuBarComponent,
+    MenuTitleComponent,
+    BigCardComponent,
+    SmallCardComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
