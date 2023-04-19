@@ -10,3 +10,8 @@
 a {
     text-decoration: none;
 }
+@media screen (max-width:300px) {
+    .container-menu-title > h1 {
+        font-size: 30px;
+    }
+}
