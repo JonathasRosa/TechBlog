@@ -20,6 +20,6 @@ header {
 .content-description {
     margin-top:15px;
 }
-.content-description > p{
+.content-description > p {
     color: grey;
 }
