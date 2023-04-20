@@ -2,16 +2,27 @@
     <app-menu-bar></app-menu-bar>
 </header>
 <app-menu-title></app-menu-title>
-<div class="articles">
+<div class="articles" >
     <div class="articles-main">
-        <app-big-card></app-big-card>
+        <app-big-card 
+            photoCover="../../../assets/img/download.png" 
+            cardTitle="O que é Angular?" 
+            cardDescription="O Angular é um framework completo muito utilizado para o desenvolvimento web. Com ele podemos construir aplicações interativas do tipo Single-page application.">
+        </app-big-card>
     </div>
     <div class="articles-others">
-        <app-small-card></app-small-card>
-        <app-small-card></app-small-card>
-        <app-small-card></app-small-card>
-        <app-small-card></app-small-card>
+        <app-small-card 
+            photoCover="../../../assets/img/programacao-1.png" 
+            cardTitle="O que é Programação?">
+        </app-small-card>
+        <app-small-card 
+            photoCover="../../../assets/img/programacao-2.png" 
+            cardTitle="Por onde começar na programação?">
+        </app-small-card>
+        <app-small-card 
+            photoCover="../../../assets/img/linguagens.png" 
+            cardTitle="Qual linguagem estudar?">
+        </app-small-card>
     </div>
 </div>
 <hr>
-<app-footer></app-footer>
