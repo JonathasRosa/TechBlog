@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { dataFake } from '../../data/dataFake'
 
 @Component({
   selector: 'app-content',
@@ -7,11 +9,27 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContentComponent implements OnInit {
   @Input()
-  photoCover: string = "../../../assets/img/angular-2.png"
+  photoCover: string = ""
   @Input()
-  cardTitle: string = "Um overview sobre o framework Angular"
+  contentTitle: string = ""
   @Input()
-  cardDescription: string = "Quando decidimos utilizar uma tecnologia em um novo projeto, é natural que uma das primeiras coisa que façamos seja entender o propósito que essa tecnologia tem a oferecer e como podemos ter um maior aproveitamento de suas funcionalidades e características. Para adquirir este entendimento é necessário ter uma visão geral da arquitetura dessa tecnologia. Pensando nisso, vamos demonstrar neste artigo uma visão geral da arquitetura do Angular e, assim, possibilitar aos leitores a oportunidade de entender melhor como funciona este fantástico framework."
-  constructor() { }
-  ngOnInit(): void { }
+  contentDescription: string = ""
+
+  private id: string | null ="0"
+
+  constructor(
+    private route:ActivatedRoute
+  ) { }
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(value => 
+      this.id = value.get("ID")
+    )
+    this.setValuesToComponent(this.id)
+  }
+  setValuesToComponent(id: string | null) {
+    const result = dataFake.filter(article => article.id == id)[0]
+    this.contentTitle = result.title
+    this.contentDescription = result.description
+    this.photoCover = result.photoCover      
+  }
 }

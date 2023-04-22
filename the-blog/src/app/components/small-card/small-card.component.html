@@ -4,7 +4,7 @@
             <img src="{{photoCover}}" alt="" height="300px">
         </div>
         <div class="small-card-title">
-            <h1><a href="https://angular.io" target="_blank">{{cardTitle}}</a></h1>
+            <h1><a [routerLink]="['/content', ID]" > {{cardTitle}} </a></h1>
         </div>
     </div>
     <div class="container-small-card-separator">
